@@ -1,7 +1,7 @@
 {
   "name": "brainrot-lang",
   "displayName": "BrainRot Lang",
-  "description": "Syntax highlighting, icons and hover docs for BrainRot Lang (.brl)",
+  "description": "Syntax highlighting, icons and hover docs for BrainRot Lang (.brt)",
   "version": "1.0.0",
   "publisher": "TanveerRajpurohit",
   "engines": { "vscode": "^1.74.0" },
@@ -15,7 +15,7 @@
     "languages": [{
       "id": "brainrot",
       "aliases": ["BrainRot", "brainrot"],
-      "extensions": [".brl"],
+      "extensions": [".brt"],
       "configuration": "./language-configuration.json",
       "icon": {
         "light": "./icons/brainrot-icon.png",
