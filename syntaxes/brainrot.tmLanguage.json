@@ -1,0 +1,61 @@
+{
+  "name": "BrainRot",
+  "scopeName": "source.brainrot",
+  "fileTypes": ["brl"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#booleans" },
+    { "include": "#operators" },
+    { "include": "#functions" }
+  ],
+  "repository": {
+    "comments": {
+      "name": "comment.line.brainrot",
+      "match": "#.*$"
+    },
+    "strings": {
+      "name": "string.quoted.double.brainrot",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [{
+        "name": "constant.character.escape.brainrot",
+        "match": "\\\\."
+      }]
+    },
+    "numbers": {
+      "name": "constant.numeric.brainrot",
+      "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+    },
+    "booleans": {
+      "name": "constant.language.brainrot",
+      "match": "\\b(fr_fr|cap|ghosted)\\b"
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.brainrot",
+          "match": "\\b(chat_is_this_real|wait_hold_up|nah_bro|on_repeat|run_it_back|mission_abort|skip_this_one)\\b"
+        },
+        {
+          "name": "keyword.declaration.brainrot",
+          "match": "\\b(trust_me_bro|let_him_cook|take_this)\\b"
+        },
+        {
+          "name": "support.function.brainrot",
+          "match": "\\b(say_my_name)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "name": "keyword.operator.brainrot",
+      "match": "(==|!=|<=|>=|&&|\\|\\||[+\\-*/%!<>]|\\*\\*|\\+\\+|--)"
+    },
+    "functions": {
+      "name": "entity.name.function.brainrot",
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()"
+    }
+  }
+}

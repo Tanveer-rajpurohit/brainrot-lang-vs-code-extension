@@ -1,0 +1,58 @@
+{
+  "Main function": {
+    "prefix": "main",
+    "body": ["let_him_cook main() {", "\t$0", "}"],
+    "description": "Entry point — every BrainRot program needs this"
+  },
+  "Function": {
+    "prefix": "fn",
+    "body": ["let_him_cook ${1:name}(${2:params}) {", "\t$0", "}"],
+    "description": "let_him_cook — define a function"
+  },
+  "Variable": {
+    "prefix": "var",
+    "body": ["trust_me_bro ${1:name} = ${2:value}"],
+    "description": "trust_me_bro — declare a variable"
+  },
+  "If statement": {
+    "prefix": "if",
+    "body": ["chat_is_this_real (${1:condition}) {", "\t$0", "}"],
+    "description": "chat_is_this_real — if condition"
+  },
+  "If else": {
+    "prefix": "ife",
+    "body": [
+      "chat_is_this_real (${1:condition}) {",
+      "\t$0",
+      "}",
+      "nah_bro {",
+      "\t",
+      "}"
+    ],
+    "description": "if / else block"
+  },
+  "For loop": {
+    "prefix": "for",
+    "body": [
+      "run_it_back (trust_me_bro ${1:i} = 0; ${1:i} < ${2:10}; ${1:i} += 1) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "run_it_back — for loop"
+  },
+  "While loop": {
+    "prefix": "while",
+    "body": ["on_repeat (${1:condition}) {", "\t$0", "}"],
+    "description": "on_repeat — while loop"
+  },
+  "Print": {
+    "prefix": "print",
+    "body": ["say_my_name(${1:value})"],
+    "description": "say_my_name — print to stdout"
+  },
+  "Return": {
+    "prefix": "ret",
+    "body": ["take_this ${1:value}"],
+    "description": "take_this — return a value"
+  }
+}
