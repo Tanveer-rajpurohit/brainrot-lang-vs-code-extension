@@ -1,19 +1,23 @@
 {
   "name": "BrainRot",
   "scopeName": "source.brainrot",
-  "fileTypes": ["brl"],
+  "fileTypes": ["brt"],
   "patterns": [
     { "include": "#comments" },
     { "include": "#strings" },
     { "include": "#numbers" },
-    { "include": "#keywords" },
     { "include": "#booleans" },
+    { "include": "#builtins" },
+    { "include": "#control-keywords" },
+    { "include": "#declaration-keywords" },
+    { "include": "#function-calls" },
     { "include": "#operators" },
-    { "include": "#functions" }
+    { "include": "#punctuation" },
+    { "include": "#identifiers" }
   ],
   "repository": {
     "comments": {
-      "name": "comment.line.brainrot",
+      "name": "comment.line.number-sign.brainrot",
       "match": "#.*$"
     },
     "strings": {
@@ -33,29 +37,64 @@
       "name": "constant.language.brainrot",
       "match": "\\b(fr_fr|cap|ghosted)\\b"
     },
-    "keywords": {
-      "patterns": [
-        {
-          "name": "keyword.control.brainrot",
-          "match": "\\b(chat_is_this_real|wait_hold_up|nah_bro|on_repeat|run_it_back|mission_abort|skip_this_one)\\b"
-        },
-        {
-          "name": "keyword.declaration.brainrot",
-          "match": "\\b(trust_me_bro|let_him_cook|take_this)\\b"
-        },
-        {
-          "name": "support.function.brainrot",
-          "match": "\\b(say_my_name)\\b"
-        }
-      ]
+    "builtins": {
+      "name": "support.function.brainrot",
+      "match": "\\b(say_my_name)\\b"
+    },
+    "control-keywords": {
+      "name": "keyword.control.brainrot",
+      "match": "\\b(chat_is_this_real|wait_hold_up|nah_bro|on_repeat|run_it_back|mission_abort|skip_this_one)\\b"
+    },
+    "declaration-keywords": {
+      "name": "keyword.other.brainrot",
+      "match": "\\b(trust_me_bro|let_him_cook|take_this)\\b"
+    },
+    "function-calls": {
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(\\()",
+      "captures": {
+        "1": { "name": "entity.name.function.brainrot" },
+        "2": { "name": "punctuation.paren.open.brainrot" }
+      }
     },
     "operators": {
       "name": "keyword.operator.brainrot",
-      "match": "(==|!=|<=|>=|&&|\\|\\||[+\\-*/%!<>]|\\*\\*|\\+\\+|--)"
+      "match": "(\\*\\*|\\+\\+|--|==|!=|<=|>=|&&|\\|\\||[+\\-*/%=!<>]|\\+=|-=|\\*=|/=)"
     },
-    "functions": {
-      "name": "entity.name.function.brainrot",
-      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()"
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.paren.open.brainrot",
+          "match": "\\("
+        },
+        {
+          "name": "punctuation.paren.close.brainrot",
+          "match": "\\)"
+        },
+        {
+          "name": "punctuation.brace.open.brainrot",
+          "match": "\\{"
+        },
+        {
+          "name": "punctuation.brace.close.brainrot",
+          "match": "\\}"
+        },
+        {
+          "name": "punctuation.bracket.open.brainrot",
+          "match": "\\["
+        },
+        {
+          "name": "punctuation.bracket.close.brainrot",
+          "match": "\\]"
+        },
+        {
+          "name": "punctuation.separator.brainrot",
+          "match": "[,;]"
+        }
+      ]
+    },
+    "identifiers": {
+      "name": "variable.other.brainrot",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
     }
   }
 }
